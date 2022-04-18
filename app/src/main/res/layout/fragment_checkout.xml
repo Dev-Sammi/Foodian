@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mViewModel"
+            type="com.example.foodian.viewmodel.FoodianViewModel" />
+    </data>
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="582dp"
+        android:layout_margin="@dimen/dimens_8_dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_summary"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_entree_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_4_dp"
+            android:text='@{mViewModel.entree.name}'
+            tools:text="@string/entree_meal"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialTextView" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_entree_summary_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/price"
+            android:text='@{mViewModel.entree.formattedPrice}'
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_entree_summary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_entree_summary" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_side_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{mViewModel.side.name}'
+            android:layout_marginTop="@dimen/dimens_4_dp"
+            tools:text="@string/side_meal"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_entree_summary" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_side_summary_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/price"
+            android:text='@{mViewModel.side.formattedPrice}'
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_side_summary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_side_summary" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_accompaniment_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_4_dp"
+            android:text='@{mViewModel.accompaniment.name}'
+            tools:text="@string/accompaniment_meal"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_side_summary"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_accompaniment_summary_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/price"
+            android:text='@{mViewModel.accompaniment.formattedPrice}'
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_accompaniment_summary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_accompaniment_summary" />
+
+        <View
+            android:id="@+id/summary_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/dividerHorizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_accompaniment_summary" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_checkout_subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{String.format(@string/sub_total,mViewModel.subtotal)}'
+            tools:text="@string/sub_total"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/dimens_16_dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/summary_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_checkout_tax_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/tax"
+            android:text="@{String.format(@string/tax, mViewModel.tax)}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_marginTop="@dimen/dimens_4_dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_checkout_subtotal" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_checkout_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.format(@string/total, mViewModel.totalPrice)}"
+            tools:text="@string/total"
+            android:layout_marginTop="@dimen/dimens_4_dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_checkout_tax_rate" />
+
+        <LinearLayout
+            android:id="@+id/ll_cancel_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_checkout_total">
+
+            <Button
+                android:id="@+id/bt_submit_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16_dp"
+                android:text="@string/submit_order" />
+
+            <Button
+                android:id="@+id/bt_cancel"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_16_dp"
+                android:layout_marginEnd="@dimen/dimens_16_dp"
+                android:text="@string/cancel" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--</ScrollView>-->
+</layout>

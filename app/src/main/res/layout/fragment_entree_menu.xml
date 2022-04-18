@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mViewModel"
+            type="com.example.foodian.viewmodel.FoodianViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dimens_8_dp"
+        tools:context=".ui.fragment.EntreeMenuFragment">
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/rb_entree_menu_item_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:onClick='@{()-> mViewModel.setEntree(@string/cauliflower)}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:text='@{mViewModel.menuItem["cauliflower"].name}'
+                tools:text="Entree 1"/>
+
+            <TextView
+                android:id="@+id/tv_entree_menu_item_1_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text='@{mViewModel.menuItem["cauliflower"].description}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/food_description" />
+
+            <TextView
+                android:id="@+id/tv_entree_menu_item_1_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:text='@{mViewModel.menuItem["cauliflower"].getFormattedPrice()}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/price" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:layout_marginBottom="@dimen/dimens_4_dp"
+                android:background="?attr/dividerHorizontal" />
+
+            <RadioButton
+                android:id="@+id/rb_entree_menu_item_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:onClick='@{()-> mViewModel.setEntree(@string/chili)}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:text='@{mViewModel.menuItem["chili"].name}'
+                tools:text="Entree 2" />
+
+            <TextView
+                android:id="@+id/tv_entree_menu_item_2_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text='@{mViewModel.menuItem["chili"].description}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/food_description" />
+
+            <TextView
+                android:id="@+id/tv_entree_menu_item_2_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:text='@{mViewModel.menuItem["chili"].getFormattedPrice()}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/price" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:layout_marginBottom="@dimen/dimens_4_dp"
+                android:background="?attr/dividerHorizontal" />
+
+            <RadioButton
+                android:id="@+id/rb_entree_menu_item_3"
+                android:layout_width="wrap_content"
+                android:minHeight="0dp"
+                android:layout_height="wrap_content"
+                android:onClick='@{()-> mViewModel.setEntree(@string/pasta)}'
+                android:text='@{mViewModel.menuItem["pasta"].name}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                tools:text="Entree 1" />
+
+            <TextView
+                android:id="@+id/tv_entree_menu_item_3_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text='@{mViewModel.menuItem["pasta"].description}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/food_description" />
+
+            <TextView
+                android:id="@+id/tv_entree_menu_item_3_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:text='@{mViewModel.menuItem["pasta"].getFormattedPrice()}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/price" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:layout_marginBottom="@dimen/dimens_4_dp"
+                android:background="?attr/dividerHorizontal" />
+
+            <RadioButton
+                android:id="@+id/rb_entree_menu_item_4"
+                android:layout_width="wrap_content"
+                android:minHeight="0dp"
+                android:layout_height="wrap_content"
+                android:onClick='@{()-> mViewModel.setEntree(@string/skillet)}'
+                android:text='@{mViewModel.menuItem["skillet"].name}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                tools:text="Entree 1" />
+
+            <TextView
+                android:id="@+id/tv_entree_menu_item_4_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text='@{mViewModel.menuItem["skillet"].description}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/food_description" />
+
+            <TextView
+                android:id="@+id/tv_entree_menu_item_4_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:text='@{mViewModel.menuItem["skillet"].getFormattedPrice()}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/price" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:layout_marginBottom="@dimen/dimens_4_dp"
+                android:background="?attr/dividerHorizontal" />
+        </RadioGroup>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_checkout_subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_16_dp"
+            android:layout_marginEnd="@dimen/dimens_8_dp"
+            android:text='@{String.format(@string/sub_total,mViewModel.subtotal)}'
+            tools:text="@string/sub_total"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintBottom_toTopOf="@id/ll_cancel_next"/>
+
+        <LinearLayout
+            android:id="@+id/ll_cancel_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_checkout_subtotal">
+
+            <Button
+                android:id="@+id/bt_cancel"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_16_dp"
+                android:layout_marginEnd="@dimen/dimens_16_dp"
+                android:layout_weight="1"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/bt_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimens_16_dp"
+                android:layout_weight="1"
+                android:text="@string/next" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

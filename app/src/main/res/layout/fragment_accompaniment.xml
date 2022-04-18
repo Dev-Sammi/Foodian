@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mViewModel"
+            type="com.example.foodian.viewmodel.FoodianViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dimens_8_dp"
+        tools:context=".ui.fragment.AccompanimentFragment">
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:minHeight="0dp"
+                android:id="@+id/rb_accompaniment_menu_item_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{mViewModel.menuItem["bread"].name}'
+                android:onClick='@{()-> mViewModel.setAccompaniment("bread")}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                tools:text="Accompaniment 1" />
+
+            <TextView
+                android:id="@+id/tv_accompaniment_menu_item_1_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:ellipsize="end"
+                android:text='@{mViewModel.menuItem["bread"].description}'
+                android:maxLines="2"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/food_description" />
+
+            <TextView
+                android:id="@+id/tv_accompaniment_menu_item_1_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:text='@{mViewModel.menuItem["bread"].getFormattedPrice()}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/price" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:layout_marginBottom="@dimen/dimens_4_dp"
+                android:background="?attr/dividerHorizontal" />
+
+            <RadioButton
+                android:minHeight="0dp"
+                android:id="@+id/rb_accompaniment_menu_item_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{mViewModel.menuItem["berries"].name}'
+                android:onClick='@{()-> mViewModel.setAccompaniment("berries")}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                tools:text="Accompaniment 2" />
+
+            <TextView
+                android:id="@+id/tv_accompaniment_menu_item_2_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{mViewModel.menuItem["berries"].description}'
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/food_description" />
+
+            <TextView
+                android:id="@+id/tv_accompaniment_menu_item_2_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:text='@{mViewModel.menuItem["berries"].getFormattedPrice()}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/price" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:layout_marginBottom="@dimen/dimens_4_dp"
+                android:background="?attr/dividerHorizontal" />
+
+            <RadioButton
+                android:minHeight="0dp"
+                android:id="@+id/rb_accompaniment_menu_item_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{mViewModel.menuItem["pickles"].name}'
+                android:onClick='@{()-> mViewModel.setAccompaniment("pickles")}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                tools:text="Accompaniment 3" />
+
+            <TextView
+                android:id="@+id/tv_accompaniment_menu_item_3_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:ellipsize="end"
+                android:text='@{mViewModel.menuItem["pickles"].description}'
+                android:maxLines="2"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/food_description" />
+
+            <TextView
+                android:id="@+id/tv_accompaniment_menu_item_3_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_32_dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:text='@{mViewModel.menuItem["pickles"].getFormattedPrice()}'
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@string/price" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimens_4_dp"
+                android:layout_marginBottom="@dimen/dimens_4_dp"
+                android:background="?attr/dividerHorizontal" />
+
+
+        </RadioGroup>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_checkout_subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_16_dp"
+            android:layout_marginEnd="@dimen/dimens_8_dp"
+            tools:text="@string/sub_total"
+            android:text='@{String.format(@string/sub_total,mViewModel.subtotal)}'
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintBottom_toTopOf="@id/ll_cancel_next"/>
+
+        <LinearLayout
+            android:id="@+id/ll_cancel_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_checkout_subtotal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/dimens_16_dp"
+                android:layout_marginEnd="@dimen/dimens_16_dp"
+                style="?attr/materialButtonOutlinedStyle"/>
+
+            <Button
+                android:id="@+id/bt_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/next"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/dimens_16_dp"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

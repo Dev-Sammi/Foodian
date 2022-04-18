@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startOrderFragment">
+
+    <fragment
+        android:id="@+id/startOrderFragment"
+        android:name="com.example.foodian.ui.fragment.StartOrderFragment"
+        android:label="Foodian"
+        tools:layout="@layout/fragment_start_order" >
+        <action
+            android:id="@+id/action_startOrderFragment_to_entreeMenuFragment"
+            app:destination="@id/entreeMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entreeMenuFragment"
+        android:name="com.example.foodian.ui.fragment.EntreeMenuFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_entreeMenuFragment_to_sideMenuFragment"
+            app:destination="@id/sideMenuFragment" />
+        <action
+            android:id="@+id/action_entreeMenuFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sideMenuFragment"
+        android:name="com.example.foodian.ui.fragment.SideMenuFragment"
+        android:label="{side_title}"
+        tools:layout="@layout/fragment_side_menu">
+        <argument
+            android:name="side_title"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_sideMenuFragment_to_accompanimentFragment"
+            app:destination="@id/accompanimentFragment" />
+        <action
+            android:id="@+id/action_sideMenuFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accompanimentFragment"
+        android:name="com.example.foodian.ui.fragment.AccompanimentFragment"
+        android:label="{accompaniment_title}">
+        <argument
+            android:name="accompaniment_title"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_accompanimentFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+        <action
+            android:id="@+id/action_accompanimentFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.example.foodian.ui.fragment.CheckoutFragment"
+        android:label="{checkout_title}">
+        <argument
+            android:name="checkout_title"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_checkoutFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
+    </fragment>
+</navigation>
